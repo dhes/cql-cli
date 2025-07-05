@@ -8,21 +8,21 @@ repositories {
 }
 
 dependencies {
-    // Use version 3.22.0 (known to work with QICore) but with Jackson packages
-    implementation 'info.cqframework:cql-to-elm:3.22.0'
+    // Use version 3.26.0 (known to work with QICore) but with Jackson packages
+    implementation 'info.cqframework:cql-to-elm:3.26.0'
     
     // Switch back to Jackson packages (which were working)
-    implementation 'info.cqframework:model-jackson:3.22.0'
-    implementation 'info.cqframework:elm-jackson:3.22.0'
+    implementation 'info.cqframework:model-jackson:3.26.0'
+    implementation 'info.cqframework:elm-jackson:3.26.0'
     
     // Keep the model packages that likely contain QICore support
-    implementation 'info.cqframework:quick:3.22.0'
-    implementation 'info.cqframework:qdm:3.22.0'
+    implementation 'info.cqframework:quick:3.26.0'
+    implementation 'info.cqframework:qdm:3.26.0'
     
     // Core packages
-    implementation 'info.cqframework:cql:3.22.0'
-    implementation 'info.cqframework:model:3.22.0'
-    implementation 'info.cqframework:elm:3.22.0'
+    implementation 'info.cqframework:cql:3.26.0'
+    implementation 'info.cqframework:model:3.26.0'
+    implementation 'info.cqframework:elm:3.26.0'
     
     // Other dependencies
     implementation 'net.sf.jopt-simple:jopt-simple:4.7'
