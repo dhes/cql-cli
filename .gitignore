@@ -1,0 +1,80 @@
+# Gradle files
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+!gradle/
+.gradletasknamecache
+
+# Java compiled files
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE files
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+
+# Eclipse
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# CQL/ELM output files (adjust based on your needs)
+output.xml
+output.json
+*.elm.xml
+*.elm.json
+
+# Test input files (uncomment if you want to ignore test CQL files)
+# example.cql
+# test*.cql
+
+# Temporary files
+tmp/
+temp/
+
+# Maven (in case you ever switch)
+target/
+
+# Configuration cache
+.gradle-cache/

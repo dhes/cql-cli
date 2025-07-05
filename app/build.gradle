@@ -1,0 +1,64 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/groups/public' }
+}
+
+dependencies {
+    // Main cql-to-elm dependency
+    implementation 'info.cqframework:cql-to-elm:3.26.0'
+    
+    // Model packages (fixed the previous error)
+    implementation 'info.cqframework:model-jackson:3.26.0'
+    
+    // ELM packages (to fix the current error)
+    implementation 'info.cqframework:elm-jackson:3.26.0'
+    // Alternative: implementation 'info.cqframework:elm-jaxb:3.26.0'
+    
+    // Other dependencies you had
+    implementation 'net.sf.jopt-simple:jopt-simple:4.7'
+    implementation 'org.slf4j:slf4j-simple:2.0.13'
+    
+    // Test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application {
+    mainClass = 'org.example.App'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'org.example.App'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.register('fatJar', Jar) {
+    archiveClassifier.set('all')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
